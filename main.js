@@ -15,7 +15,7 @@ function renderHeader() {
         <nav>
             <a href="index.html">Trang chủ</a>
             <a href="product.html">Sản phẩm</a>
-            <a href="#">Giới Thiệu</a>
+            <a href="admin.html">Quản lý sản phẩm</a>
             <a href="cart.html">Giỏ hàng (0)</a>
         </nav>
     `;
