@@ -29,12 +29,12 @@ function renderFooter() {
         <div class="footer-container">
             <div class="footer-column">
                 <h4>Về chúng tôi</h4>
-                <p>Cửa hàng điện tử chuyên cung cấp các sản phẩm công nghệ chất lượng cao.</p>
+                <p>BeoBeo Store chuyên cung cấp các sản phẩm công nghệ chất lượng cao.</p>
             </div>
             <div class="footer-column">
                 <h4>Liên hệ</h4>
-                <p>Email: contact@store.com</p>
-                <p>Hotline: 0909 999 999</p>
+                <p>Email: Beobeo@store.com</p>
+                <p>Hotline: 0763331153</p>
             </div>
             <div class="footer-column">
                 <h4>Hỗ trợ</h4>
