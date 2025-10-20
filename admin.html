@@ -26,31 +26,7 @@
             </table>
         </section>
     </main>
-    <!-- <script>
-        // Hiển thị tên admin
-        function displayAdminName() {
-            const userData = localStorage.getItem('currentUser');
-            if (userData) {
-                const user = JSON.parse(userData);
-                document.getElementById('admin-name').textContent = user.name;
-            }
-        }
-        
-        // Hàm đăng xuất
-        function logoutAdmin() {
-            if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
-                localStorage.removeItem('currentUser');
-                alert('Đã đăng xuất thành công!');
-                window.location.href = 'login.html';
-            }
-        }
-        
-        // Gọi hàm hiển thị tên admin khi trang load
-        displayAdminName();
-    </script> -->
     <script src="main.js"></script>
-    <script src="admin.js"></script>
-    <script src="auth.js"></script>
-    
+    <script src="admin.js"></script>    
 </body>
 </html>
