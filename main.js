@@ -13,7 +13,7 @@ function renderHeader() {
     header.innerHTML = `
         <div class="logo"><h1>BeoBeo Store</h1></div>
         <nav>
-            <a href="index.html>Trang chủ</a>
+            <a href="index.html">Trang chủ</a>
             <a href="product.html">Sản phẩm</a>
             <a href="admin.html">Quản lý sản phẩm</a>
             <a href="login.html">Đăng nhập</a>
