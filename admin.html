@@ -6,12 +6,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- <header class="admin-header">
-        <div class="admin-title">BeoBeo Admin Panel</div>
-        <div class="admin-user">
-            <span class="admin-icon">👤</span> Admin
-        </div>
-    </header> -->
     <nav class="admin-nav">
         <a href="#" class="active">Quản lý sản phẩm</a>
         <a href="#">Quản lý câu hỏi</a>
@@ -29,22 +23,34 @@
                         <th>Thao tác</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- Dữ liệu -->
-                </tbody>
             </table>
         </section>
     </main>
+    <!-- <script>
+        // Hiển thị tên admin
+        function displayAdminName() {
+            const userData = localStorage.getItem('currentUser');
+            if (userData) {
+                const user = JSON.parse(userData);
+                document.getElementById('admin-name').textContent = user.name;
+            }
+        }
+        
+        // Hàm đăng xuất
+        function logoutAdmin() {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                localStorage.removeItem('currentUser');
+                alert('Đã đăng xuất thành công!');
+                window.location.href = 'login.html';
+            }
+        }
+        
+        // Gọi hàm hiển thị tên admin khi trang load
+        displayAdminName();
+    </script> -->
     <script src="main.js"></script>
     <script src="admin.js"></script>
     <script src="auth.js"></script>
-    <!-- <footer class="admin-footer">
-        <span>© 2025 BeoBeo Admin. All rights reserved.</span>
-        <div class="footer-links">
-            <a href="#">Trợ giúp</a>
-            <a href="#">Liên hệ</a>
-            <a href="#">Chính sách</a>
-        </div>
-    </footer> -->
+    
 </body>
 </html>

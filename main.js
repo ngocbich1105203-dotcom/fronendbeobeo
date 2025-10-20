@@ -16,8 +16,8 @@ function renderHeader() {
             <a href="index.html">Trang chủ</a>
             <a href="product.html">Sản phẩm</a>
             <a href="admin.html">Quản lý sản phẩm</a>
-            <a href="admin.html">Đăng nhập</a>            
-            <a href="admin.html">Đăng Ký</a>            
+            <a href="login.html">Đăng nhập</a>
+            <a href="register.html">Đăng ký</a>           
             <a href="cart.html">Giỏ hàng (0)</a>
         </nav>
     `;
@@ -369,3 +369,45 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+  const slides = document.querySelector('.slides');
+  const totalSlides = document.querySelectorAll('.slides img').length;
+  let index = 0;
+  let interval;
+
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  // Hàm chuyển slide
+  function showSlide(i) {
+    index = (i + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  // Nút bấm
+  nextBtn.addEventListener('click', () => {
+    showSlide(index + 1);
+    resetTimer();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    showSlide(index - 1);
+    resetTimer();
+  });
+
+  // Tự động chuyển slide mỗi 3 giây
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      showSlide(index + 1);
+    }, 3000);
+  }
+
+  // Reset lại timer khi bấm nút
+  function resetTimer() {
+    clearInterval(interval);
+    startAutoSlide();
+  }
+
+  // Bắt đầu slideshow
+  startAutoSlide();
+
+
