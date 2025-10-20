@@ -1,13 +1,14 @@
-// Mảng lưu dữ liệu sản phẩm mẫu
+// ===== DỮ LIỆU MẪU =====
 let courses = [
     { id: 1, name: "Iphone 17 Promax", desc: "Lấp lánh óng ánh" },
-    { id: 2, name: "Xiaomi 17 Promax", desc: "Giống iphone nhưng là android" }
+    { id: 2, name: "Xiaomi 17 Promax", desc: "Giống iPhone nhưng là Android" }
 ];
 
-// Render danh sách sản phẩm ra bảng
+// ===== HIỂN THỊ DANH SÁCH =====
 function renderCourses() {
     const tbody = document.querySelector("table tbody");
     tbody.innerHTML = "";
+
     courses.forEach((course, idx) => {
         tbody.innerHTML += `
             <tr>
@@ -23,31 +24,35 @@ function renderCourses() {
     });
 }
 
-// Xử lý thêm sản phẩm
+// ===== THÊM SẢN PHẨM =====
 function addCourse() {
     const name = prompt("Nhập tên sản phẩm:");
     if (!name) return;
     const desc = prompt("Nhập mô tả sản phẩm:");
     if (!desc) return;
+
     const newId = courses.length ? Math.max(...courses.map(c => c.id)) + 1 : 1;
     courses.push({ id: newId, name, desc });
     renderCourses();
 }
 
-// Xử lý sửa sản phẩm
+// ===== SỬA SẢN PHẨM =====
 function editCourse(id) {
     const course = courses.find(c => c.id === id);
     if (!course) return;
+
     const newName = prompt("Sửa tên sản phẩm:", course.name);
-    if (!newName) return;
+    if (newName === null) return; // bấm Cancel
     const newDesc = prompt("Sửa mô tả:", course.desc);
-    if (!newDesc) return;
-    course.name = newName;
-    course.desc = newDesc;
+    if (newDesc === null) return;
+
+    course.name = newName.trim() || course.name;
+    course.desc = newDesc.trim() || course.desc;
+
     renderCourses();
 }
 
-// Xử lý xoá sản phẩm
+// ===== XOÁ SẢN PHẨM =====
 function deleteCourse(id) {
     if (confirm("Bạn có chắc muốn xoá sản phẩm này?")) {
         courses = courses.filter(c => c.id !== id);
@@ -55,8 +60,8 @@ function deleteCourse(id) {
     }
 }
 
-// Gắn sự kiện cho nút Thêm sản phẩm
+// ===== KHỞI TẠO =====
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".btn-dark").onclick = addCourse;
+    document.getElementById("btnAdd").addEventListener("click", addCourse);
     renderCourses();
 });
